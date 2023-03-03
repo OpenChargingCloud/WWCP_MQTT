@@ -57,7 +57,7 @@ namespace cloud.charging.open.protocols.MQTT
 
         public IId AuthId => Id;
 
-        IId ISendChargeDetailRecords.Id => Id;
+        IId ISendChargeDetailRecords.SendChargeDetailRecordsId => Id;
 
 
         /// <summary>
