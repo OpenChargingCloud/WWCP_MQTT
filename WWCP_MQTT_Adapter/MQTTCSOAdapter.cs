@@ -472,12 +472,12 @@ namespace cloud.charging.open.protocols.MQTT
 
         #region [remove me] AuthorizeStart/-Stop
 
-        public Task<WWCP.AuthStartResult> AuthorizeStart(WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingProduct? ChargingProduct = null, WWCP.ChargingSession_Id? SessionId = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTime? Timestamp = null, CancellationToken CancellationToken = default, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null)
+        public Task<WWCP.AuthStartResult> AuthorizeStart(WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingProduct? ChargingProduct = null, WWCP.ChargingSession_Id? SessionId = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTime? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.AuthStartResult.NotAuthorized(Id, this));
         }
 
-        public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id SessionId, WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTime? Timestamp = null, CancellationToken CancellationToken = default, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null)
+        public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id SessionId, WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTime? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.AuthStopResult.NotAuthorized(Id, this));
         }
@@ -486,7 +486,7 @@ namespace cloud.charging.open.protocols.MQTT
 
         #region [remove me] SendChargeDetailRecords
 
-        public Task<WWCP.SendCDRsResult> SendChargeDetailRecords(IEnumerable<WWCP.ChargeDetailRecord> ChargeDetailRecords, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTime? Timestamp = null, CancellationToken CancellationToken = default, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null)
+        public Task<WWCP.SendCDRsResult> SendChargeDetailRecords(IEnumerable<WWCP.ChargeDetailRecord> ChargeDetailRecords, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTime? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.SendCDRsResult.NoOperation(org.GraphDefined.Vanaheimr.Illias.Timestamp.Now, Id, this, ChargeDetailRecords));
         }
