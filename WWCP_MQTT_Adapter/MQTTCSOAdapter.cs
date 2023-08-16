@@ -38,7 +38,7 @@ namespace cloud.charging.open.protocols.MQTT
     /// Publish charging station operator information via MQTT.
     /// </summary>
     public class MQTTCSOAdapter : WWCP.AWWCPCSOAdapter<WWCP.ChargeDetailRecord>,
-                                  WWCP.IEMPRoamingProvider,
+                                  WWCP.ICSORoamingProvider,
                                   IEquatable <MQTTCSOAdapter>,
                                   IComparable<MQTTCSOAdapter>,
                                   IComparable
@@ -121,7 +121,7 @@ namespace cloud.charging.open.protocols.MQTT
 
         #region Constructor(s)
 
-        public MQTTCSOAdapter(WWCP.EMPRoamingProvider_Id                       Id,
+        public MQTTCSOAdapter(WWCP.CSORoamingProvider_Id                       Id,
                               I18NString                                       Name,
                               I18NString                                       Description,
                               WWCP.RoamingNetwork                              RoamingNetwork,
