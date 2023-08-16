@@ -37,7 +37,7 @@ namespace cloud.charging.open.protocols.MQTT
     /// <summary>
     /// Publish charging station operator information via MQTT.
     /// </summary>
-    public class MQTTCSOAdapter : WWCP.AWWCPEMPAdapter<WWCP.ChargeDetailRecord>,
+    public class MQTTCSOAdapter : WWCP.AWWCPCSOAdapter<WWCP.ChargeDetailRecord>,
                                   WWCP.IEMPRoamingProvider,
                                   IEquatable <MQTTCSOAdapter>,
                                   IComparable<MQTTCSOAdapter>,
