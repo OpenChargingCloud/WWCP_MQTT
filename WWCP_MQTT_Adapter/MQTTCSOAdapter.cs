@@ -312,7 +312,7 @@ namespace cloud.charging.open.protocols.MQTT
                          ? WWCP.PushEVSEAdminStatusResult.Success(Id, this)
 
                          : WWCP.PushEVSEAdminStatusResult.Error(
-                               AuthId:            Id,
+                               SenderId:          Id,
                                ISendAdminStatus:  this,
                                RejectedEVSEs:     EVSEAdminStatusUpdates,
                                Description:       $"{mqttPublishResult.ReasonCode} {mqttPublishResult.ReasonString}",
@@ -381,7 +381,7 @@ namespace cloud.charging.open.protocols.MQTT
                          ? WWCP.PushEVSEStatusResult.Success(Id, this)
 
                          : WWCP.PushEVSEStatusResult.Error(
-                               AuthId:         Id,
+                               SenderId:       Id,
                                ISendStatus:    this,
                                RejectedEVSEs:  EVSEStatusUpdates,
                                Description:    $"{mqttPublishResult.ReasonCode} {mqttPublishResult.ReasonString}",
@@ -451,7 +451,7 @@ namespace cloud.charging.open.protocols.MQTT
                          ? WWCP.PushEVSEEnergyStatusResult.Success(Id, this)
 
                          : WWCP.PushEVSEEnergyStatusResult.Error(
-                               AuthId:             Id,
+                               SenderId:           Id,
                                ISendEnergyStatus:  this,
                                RejectedEVSEs:      EVSEEnergyStatusUpdates,
                                Description:        $"{mqttPublishResult.ReasonCode} {mqttPublishResult.ReasonString}",
