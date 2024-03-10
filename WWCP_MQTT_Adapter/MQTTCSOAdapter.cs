@@ -484,7 +484,12 @@ namespace cloud.charging.open.protocols.MQTT
 
         #endregion
 
-        #region [remove me] SendChargeDetailRecords
+        #region [remove me] SendChargeDetailRecord(s)
+
+        public Task<WWCP.SendCDRResult> SendChargeDetailRecord(WWCP.ChargeDetailRecord ChargeDetailRecord, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTime? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        {
+            return Task.FromResult(WWCP.SendCDRResult.NoOperation(org.GraphDefined.Vanaheimr.Illias.Timestamp.Now, Id, ChargeDetailRecord));
+        }
 
         public Task<WWCP.SendCDRsResult> SendChargeDetailRecords(IEnumerable<WWCP.ChargeDetailRecord> ChargeDetailRecords, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTime? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
