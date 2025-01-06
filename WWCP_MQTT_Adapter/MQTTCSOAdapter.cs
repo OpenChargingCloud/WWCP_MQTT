@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2015-2024 GraphDefined GmbH <achim.friedland@graphdefined.com>
+ * Copyright (c) 2015-2025 GraphDefined GmbH <achim.friedland@graphdefined.com>
  * This file is part of WWCP MQTT <https://github.com/OpenChargingCloud/WWCP_MQTT>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,7 @@
 using Newtonsoft.Json.Linq;
 
 using MQTTnet;
-using MQTTnet.Client;
+//using MQTTnet.Client;
 using MQTTnet.Packets;
 
 using org.GraphDefined.Vanaheimr.Illias;
@@ -61,7 +61,7 @@ namespace cloud.charging.open.protocols.MQTT
         public  const       String         DefaultHTTPAPI_LogfileName   = "MQTT_CSOAdapter.log";
 
 
-        private readonly  MqttFactory      mqttFactory                  = new ();
+        //private readonly  MqttFactory      mqttFactory                  = new ();
         private           IMqttClient      mqttClient;
 
         #endregion
@@ -211,7 +211,7 @@ namespace cloud.charging.open.protocols.MQTT
 
             this.MQTTHostname  = MQTTHostname;
             this.MQTTTCPPort   = MQTTTCPPort ?? IPPort.SSH;
-            this.mqttClient    = mqttFactory.CreateMqttClient();  // IMqttNetLogger
+            //this.mqttClient    = mqttFactory.CreateMqttClient();  // IMqttNetLogger
 
         }
 
