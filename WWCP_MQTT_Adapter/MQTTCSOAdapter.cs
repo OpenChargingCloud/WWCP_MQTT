@@ -278,6 +278,7 @@ namespace cloud.charging.open.protocols.MQTT
                                   DateTime?                                Timestamp           = null,
                                   EventTracking_Id?                        EventTrackingId     = null,
                                   TimeSpan?                                RequestTimeout      = null,
+                                  User_Id?                                 CurrentUserId       = null,
                                   CancellationToken                        CancellationToken   = default)
 
         {
@@ -347,6 +348,7 @@ namespace cloud.charging.open.protocols.MQTT
                              DateTime?                           Timestamp           = null,
                              EventTracking_Id?                   EventTrackingId     = null,
                              TimeSpan?                           RequestTimeout      = null,
+                             User_Id?                            CurrentUserId       = null,
                              CancellationToken                   CancellationToken   = default)
 
         {
@@ -416,6 +418,7 @@ namespace cloud.charging.open.protocols.MQTT
                                    DateTime?                                 Timestamp           = null,
                                    EventTracking_Id?                         EventTrackingId     = null,
                                    TimeSpan?                                 RequestTimeout      = null,
+                                   User_Id?                                  CurrentUserId       = null,
                                    CancellationToken                         CancellationToken   = default)
 
         {
