@@ -275,7 +275,7 @@ namespace cloud.charging.open.protocols.MQTT
             UpdateEVSEAdminStatus(IEnumerable<WWCP.EVSEAdminStatusUpdate>  EVSEAdminStatusUpdates,
                                   WWCP.TransmissionTypes                   TransmissionType    = WWCP.TransmissionTypes.Enqueue,
 
-                                  DateTime?                                Timestamp           = null,
+                                  DateTimeOffset?                          Timestamp           = null,
                                   EventTracking_Id?                        EventTrackingId     = null,
                                   TimeSpan?                                RequestTimeout      = null,
                                   User_Id?                                 CurrentUserId       = null,
@@ -345,7 +345,7 @@ namespace cloud.charging.open.protocols.MQTT
             UpdateEVSEStatus(IEnumerable<WWCP.EVSEStatusUpdate>  EVSEStatusUpdates,
                              WWCP.TransmissionTypes              TransmissionType    = WWCP.TransmissionTypes.Enqueue,
 
-                             DateTime?                           Timestamp           = null,
+                             DateTimeOffset?                     Timestamp           = null,
                              EventTracking_Id?                   EventTrackingId     = null,
                              TimeSpan?                           RequestTimeout      = null,
                              User_Id?                            CurrentUserId       = null,
@@ -415,7 +415,7 @@ namespace cloud.charging.open.protocols.MQTT
             UpdateEVSEEnergyStatus(IEnumerable<WWCP.EVSEEnergyStatusUpdate>  EVSEEnergyStatusUpdates,
                                    WWCP.TransmissionTypes                    TransmissionType    = WWCP.TransmissionTypes.Enqueue,
 
-                                   DateTime?                                 Timestamp           = null,
+                                   DateTimeOffset?                           Timestamp           = null,
                                    EventTracking_Id?                         EventTrackingId     = null,
                                    TimeSpan?                                 RequestTimeout      = null,
                                    User_Id?                                  CurrentUserId       = null,
@@ -475,12 +475,12 @@ namespace cloud.charging.open.protocols.MQTT
 
         #region [remove me] AuthorizeStart/-Stop
 
-        public Task<WWCP.AuthStartResult> AuthorizeStart(WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingProduct? ChargingProduct = null, WWCP.ChargingSession_Id? SessionId = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTime? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        public Task<WWCP.AuthStartResult> AuthorizeStart(WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingProduct? ChargingProduct = null, WWCP.ChargingSession_Id? SessionId = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTimeOffset? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.AuthStartResult.NotAuthorized(Id, this));
         }
 
-        public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id SessionId, WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTime? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id SessionId, WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTimeOffset? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.AuthStopResult.NotAuthorized(Id, this));
         }
@@ -489,12 +489,12 @@ namespace cloud.charging.open.protocols.MQTT
 
         #region [remove me] SendChargeDetailRecord(s)
 
-        public Task<WWCP.SendCDRResult> SendChargeDetailRecord(WWCP.ChargeDetailRecord ChargeDetailRecord, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTime? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        public Task<WWCP.SendCDRResult> SendChargeDetailRecord(WWCP.ChargeDetailRecord ChargeDetailRecord, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTimeOffset? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.SendCDRResult.NoOperation(org.GraphDefined.Vanaheimr.Illias.Timestamp.Now, Id, ChargeDetailRecord));
         }
 
-        public Task<WWCP.SendCDRsResult> SendChargeDetailRecords(IEnumerable<WWCP.ChargeDetailRecord> ChargeDetailRecords, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTime? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        public Task<WWCP.SendCDRsResult> SendChargeDetailRecords(IEnumerable<WWCP.ChargeDetailRecord> ChargeDetailRecords, WWCP.TransmissionTypes TransmissionType = WWCP.TransmissionTypes.Enqueue, DateTimeOffset? Timestamp = null, EventTracking_Id EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
         {
             return Task.FromResult(WWCP.SendCDRsResult.NoOperation(org.GraphDefined.Vanaheimr.Illias.Timestamp.Now, Id, this, ChargeDetailRecords));
         }
