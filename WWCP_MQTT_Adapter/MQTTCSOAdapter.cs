@@ -61,7 +61,7 @@ namespace cloud.charging.open.protocols.MQTT
         public  const       String         DefaultHTTPAPI_LogfileName   = "MQTT_CSOAdapter.log";
 
 
-        //private readonly  MqttFactory      mqttFactory                  = new ();
+        //private readonly  MqttFactory      mqttFactory                  = new();
         private           IMqttClient      mqttClient;
 
         #endregion
