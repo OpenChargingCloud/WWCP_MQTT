@@ -91,8 +91,8 @@ namespace cloud.charging.open.protocols.MQTT
 
         public event WWCP.OnNewChargingSessionDelegate?          OnNewChargingSession;
 
-        public event WWCP.OnSendCDRsRequestDelegate?             OnChargeDetailRecordRequest;
-        public event WWCP.OnSendCDRsResponseDelegate?            OnChargeDetailRecordResponse;
+        public event WWCP.OnChargeDetailRecordsRequestDelegate?             OnChargeDetailRecordRequest;
+        public event WWCP.OnChargeDetailRecordsResponseDelegate?            OnChargeDetailRecordResponse;
         public event WWCP.OnNewChargeDetailRecordDelegate?       OnNewChargeDetailRecord;
 
 
@@ -114,7 +114,7 @@ namespace cloud.charging.open.protocols.MQTT
 
         public event WWCP.OnGetCDRsRequestDelegate?              OnGetChargeDetailRecordsRequest;
         public event WWCP.OnGetCDRsResponseDelegate?             OnGetChargeDetailRecordsResponse;
-        public event WWCP.OnSendCDRsResponseDelegate?            OnSendCDRsResponse;
+        public event WWCP.OnChargeDetailRecordsResponseDelegate?            OnChargeDetailRecordsResponse;
 
         #endregion
 
@@ -269,7 +269,7 @@ namespace cloud.charging.open.protocols.MQTT
         /// <param name="Timestamp">The optional timestamp of the request.</param>
         /// <param name="EventTrackingId">An optional event tracking identification for correlating this request with other events.</param>
         /// <param name="RequestTimeout">An optional timeout for this request.</param>
-        /// <param name="CancellationToken">An optional token to cancel this request.</param>
+        /// <param name="CancellationToken">A cancellation token to cancel the operation.</param>
         public override async Task<WWCP.PushEVSEAdminStatusResult>
 
             UpdateEVSEAdminStatus(IEnumerable<WWCP.EVSEAdminStatusUpdate>  EVSEAdminStatusUpdates,
@@ -339,7 +339,7 @@ namespace cloud.charging.open.protocols.MQTT
         /// <param name="Timestamp">The optional timestamp of the request.</param>
         /// <param name="EventTrackingId">An optional event tracking identification for correlating this request with other events.</param>
         /// <param name="RequestTimeout">An optional timeout for this request.</param>
-        /// <param name="CancellationToken">An optional token to cancel this request.</param>
+        /// <param name="CancellationToken">A cancellation token to cancel the operation.</param>
         public override async Task<WWCP.PushEVSEStatusResult>
 
             UpdateEVSEStatus(IEnumerable<WWCP.EVSEStatusUpdate>  EVSEStatusUpdates,
@@ -409,7 +409,7 @@ namespace cloud.charging.open.protocols.MQTT
         /// <param name="Timestamp">The optional timestamp of the request.</param>
         /// <param name="EventTrackingId">An optional event tracking identification for correlating this request with other events.</param>
         /// <param name="RequestTimeout">An optional timeout for this request.</param>
-        /// <param name="CancellationToken">An optional token to cancel this request.</param>
+        /// <param name="CancellationToken">A cancellation token to cancel the operation.</param>
         public override async Task<WWCP.PushEVSEEnergyStatusResult>
 
             UpdateEVSEEnergyStatus(IEnumerable<WWCP.EVSEEnergyStatusUpdate>  EVSEEnergyStatusUpdates,
