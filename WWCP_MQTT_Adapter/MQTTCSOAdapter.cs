@@ -28,6 +28,7 @@ using org.GraphDefined.Vanaheimr.Hermod;
 using org.GraphDefined.Vanaheimr.Hermod.DNS;
 using org.GraphDefined.Vanaheimr.Hermod.HTTP;
 using org.GraphDefined.Vanaheimr.Hermod.Logging;
+using cloud.charging.open.protocols.WWCP;
 
 #endregion
 
@@ -115,6 +116,7 @@ namespace cloud.charging.open.protocols.MQTT
         public event WWCP.OnGetCDRsRequestDelegate?              OnGetChargeDetailRecordsRequest;
         public event WWCP.OnGetCDRsResponseDelegate?             OnGetChargeDetailRecordsResponse;
         public event WWCP.OnChargeDetailRecordsResponseDelegate?            OnChargeDetailRecordsResponse;
+        public event OnChargeDetailRecordsRequestDelegate? OnChargeDetailRecordsRequest;
 
         #endregion
 
