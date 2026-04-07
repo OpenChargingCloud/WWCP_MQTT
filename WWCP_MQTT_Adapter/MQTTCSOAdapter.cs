@@ -477,12 +477,33 @@ namespace cloud.charging.open.protocols.MQTT
 
         #region [remove me] AuthorizeStart/-Stop
 
-        public Task<WWCP.AuthStartResult> AuthorizeStart(WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingProduct? ChargingProduct = null, WWCP.ChargingSession_Id? SessionId = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTimeOffset? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        public Task<WWCP.AuthStartResult> AuthorizeStart(WWCP.LocalAuthentication          LocalAuthentication,
+                                                         WWCP.ChargingLocation?            ChargingLocation      = null,
+                                                         WWCP.ChargingProduct?             ChargingProduct       = null,
+                                                         WWCP.ChargingSession_Id?          SessionId             = null,
+                                                         WWCP.ChargingSession_Id?          CPOPartnerSessionId   = null,
+                                                         //WWCP.ChargingStationOperator_Id?  OperatorId            = null,
+                                                         WWCP.EMobilityProvider_Id?        EMobilityProviderId   = null,
+
+                                                         DateTimeOffset?                   RequestTimestamp      = null,
+                                                         EventTracking_Id?                 EventTrackingId       = null,
+                                                         TimeSpan?                         RequestTimeout        = null,
+                                                         CancellationToken                 CancellationToken     = default)
         {
             return Task.FromResult(WWCP.AuthStartResult.NotAuthorized(Id, this));
         }
 
-        public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id SessionId, WWCP.LocalAuthentication LocalAuthentication, WWCP.ChargingLocation? ChargingLocation = null, WWCP.ChargingSession_Id? CPOPartnerSessionId = null, WWCP.ChargingStationOperator_Id? OperatorId = null, DateTimeOffset? Timestamp = null, EventTracking_Id? EventTrackingId = null, TimeSpan? RequestTimeout = null, CancellationToken CancellationToken = default)
+        public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id           SessionId,
+                                                       WWCP.LocalAuthentication          LocalAuthentication,
+                                                       WWCP.ChargingLocation?            ChargingLocation      = null,
+                                                       WWCP.ChargingSession_Id?          CPOPartnerSessionId   = null,
+                                                       //WWCP.ChargingStationOperator_Id?  OperatorId            = null,
+                                                       WWCP.EMobilityProvider_Id?        EMobilityProviderId   = null,
+
+                                                       DateTimeOffset?                   RequestTimestamp      = null,
+                                                       EventTracking_Id?                 EventTrackingId       = null,
+                                                       TimeSpan?                         RequestTimeout        = null,
+                                                       CancellationToken                 CancellationToken     = default)
         {
             return Task.FromResult(WWCP.AuthStopResult.NotAuthorized(Id, this));
         }
