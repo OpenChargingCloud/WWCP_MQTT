@@ -490,7 +490,7 @@ namespace cloud.charging.open.protocols.MQTT
                                                          TimeSpan?                         RequestTimeout        = null,
                                                          CancellationToken                 CancellationToken     = default)
         {
-            return Task.FromResult(WWCP.AuthStartResult.NotAuthorized(Id, this));
+            return Task.FromResult(WWCP.AuthStartResult.NotAuthorized(Id, this, TimeSpan.Zero));
         }
 
         public Task<WWCP.AuthStopResult> AuthorizeStop(WWCP.ChargingSession_Id           SessionId,
